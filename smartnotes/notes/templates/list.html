@@ -1,0 +1,12 @@
+<html>
+    <h1>Your Notes</h1>
+    <ul>
+       
+        {% for note in notes %}
+       
+        <li>{{note.title}} - {{note.created}} </li>
+        <p>{{note.text}}</p>
+       
+         {% endfor %}
+    </ul>
+</html>
