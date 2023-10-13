@@ -1,12 +1,15 @@
-<html>
-    <h1>Your Notes</h1>
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 >Your Notes</h1>
     <ul>
        
         {% for note in notes %}
        
-        <li>{{note.title}} - {{note.created}} </li>
-        <p>{{note.text}}</p>
+        <li  class="notes-li">{{note.title}} - {{note.created}} </li>
+        <a href="/smart/notes/{{note.id}}">Details</a>
        
          {% endfor %}
+
     </ul>
-</html>
+{% endblock %}
