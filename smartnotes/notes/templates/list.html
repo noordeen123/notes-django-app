@@ -6,8 +6,8 @@
        
         {% for note in notes %}
        
-        <li  class="notes-li">{{note.title}} - {{note.created}} </li>
-        <a href="/smart/notes/{{note.id}}">Details</a>
+        <li  class="list-unstyled">{{note.title}} - {{note.created}} </li>
+        <a href="/smart/notes/{{note.id}}" class="btn btn-outline-primary">Details</a>
        
          {% endfor %}
 

@@ -7,6 +7,10 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import TemplateView
 
 
+class BaseView(TemplateView):
+    template_name = 'base.html'
+    
+
 class HomeView(TemplateView):
     template_name = 'home.html'
     extra_context = {'now' : datetime.today()}

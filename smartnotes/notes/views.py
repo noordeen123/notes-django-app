@@ -18,8 +18,6 @@ class DetailsNotesView(DetailView):
    model = notes
    context_object_name = 'note'
    
-   
-
 
 
 # def details(request, id):
