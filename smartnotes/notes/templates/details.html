@@ -8,4 +8,7 @@
     <p>{{note.text}}</p>
 
 </div>
+<a href="{% url 'update' note.id %}" class="btn btn-secndary mb5">Edit</a>
+<a href="{% url 'list' %}" class="btn btn-primary my-5">Back to Notes</a>
+<a href="{% url 'delete' note.id %}" class="btn btn-danger mb5">Delete</a>
 {% endblock %}
