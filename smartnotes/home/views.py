@@ -29,6 +29,7 @@ class RegisterView(CreateView):
 
 class Logout(LogoutView):
     template_name = 'logout.html'
+    
 class Login(LoginView):
     template_name = 'login.html'
     success_url = '/smart/notes/'

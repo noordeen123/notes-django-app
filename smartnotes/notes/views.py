@@ -19,10 +19,9 @@ class UpdateNotesView(UpdateView):
    success_url = '/smart/notes/'
    form_class = NotesForm
 
-class CreateNotesView(LoginRequiredMixin, CreateView):
+class CreateNotesView(CreateView):
    template_name = 'form.html'
    model = notes
-   login_url = '/admin/'
    success_url = '/smart/notes/'
    form_class = NotesForm
 
@@ -32,11 +31,11 @@ class CreateNotesView(LoginRequiredMixin, CreateView):
       self.object.save()
       return HttpResponseRedirect(self.get_success_url())
 
-class ListNotesView(LoginRequiredMixin ,ListView):
+class ListNotesView(LoginRequiredMixin, ListView):
    template_name = 'list.html'
    model = notes
    context_object_name = 'notes'
-   login_url = '/admin/'
+   
 
    def get_queryset(self):
       return self.request.user.notes_set.all()
