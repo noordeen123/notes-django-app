@@ -2,7 +2,7 @@
 
 {% block content %}
     <h1 class="my-5" >Your Notes</h1>
-    <a href="{% url 'logout' %}"class="btn btn-outline-primary">Logout</a>
+    <a href="{% url 'logout' %}"class="btn btn-danger">Logout</a>
     <div class="row row-cols3 g-2">
         {% for note in notes %}
         <div class="col">
