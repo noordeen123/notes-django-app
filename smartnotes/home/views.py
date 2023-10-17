@@ -9,6 +9,7 @@ from django.views.generic.edit import CreateView
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.views import LoginView, LogoutView
 
+
 from django.shortcuts import render, redirect
 
 
@@ -47,6 +48,7 @@ class BaseView(TemplateView):
 class HomeView(TemplateView):
     template_name = 'home.html'
     extra_context = {'time': datetime.now()}
+   
     
 
 

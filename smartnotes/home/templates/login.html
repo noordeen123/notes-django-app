@@ -3,11 +3,6 @@
 <form method="post">
     {% csrf_token %}
     {{form.as_p}}
-    {% if form.errors %}
-    <div class="alert alert-danger my-5">
-        <p>{{form.errors.title.as_text}}</p>
-    </div>
-    {% endif %}
     <input type="submit" class="btn-secndary">
 </form>
 
