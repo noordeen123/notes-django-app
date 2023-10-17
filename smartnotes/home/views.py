@@ -32,7 +32,13 @@ class Logout(LogoutView):
     
 class Login(LoginView):
     template_name = 'login.html'
-    success_url = '/smart/notes/'
+    
+    def form_valid(self, form):
+        # Add custom logic here
+        response = super().form_valid(form)
+        if self.request.user.is_authenticated:
+            return redirect('/smart/notes/')
+        return response
     
 class BaseView(TemplateView):
     template_name = 'base.html'
