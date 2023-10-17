@@ -32,7 +32,7 @@ class Logout(LogoutView):
     
 class Login(LoginView):
     template_name = 'login.html'
-    
+
     def form_valid(self, form):
         # Add custom logic here
         response = super().form_valid(form)
@@ -46,6 +46,7 @@ class BaseView(TemplateView):
 
 class HomeView(TemplateView):
     template_name = 'home.html'
+    extra_context = {'time': datetime.now()}
     
 
 
