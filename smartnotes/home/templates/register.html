@@ -8,10 +8,9 @@
     <label>{{ x.label }}</label>
     <br>
     <p>{{x}}</p>
-        {% for error in x.errors %}
-        <p class="alert alert-danger my-5">{{ error }}</p>
-        {% endfor %}
-    
+    {% for error in x.errors %}
+    <p class="alert alert-danger my-5">{{ error }}</p>
+    {% endfor %}
     {% endfor %}
     <button type="submit">Sign up</button>
 </form>
