@@ -13,6 +13,10 @@ from django.contrib.auth.views import LoginView, LogoutView
 from django.shortcuts import render, redirect
 
 
+
+
+
+
 class RegisterView(CreateView):
     form_class = UserCreationForm
     template_name = 'register.html'
@@ -22,9 +26,7 @@ class RegisterView(CreateView):
         if request.user.is_authenticated:
             return redirect('/smart/notes/')
         return super().get(request, *args, **kwargs)
-# def register(request):
-#     form = UserCreationForm()
-#     return render(request, 'register.html', {'form': form})
+
     
     
 
@@ -33,9 +35,9 @@ class Logout(LogoutView):
     
 class Login(LoginView):
     template_name = 'login.html'
-
+    
+    
     def form_valid(self, form):
-        # Add custom logic here
         response = super().form_valid(form)
         if self.request.user.is_authenticated:
             return redirect('/smart/notes/')
@@ -48,18 +50,6 @@ class BaseView(TemplateView):
 class HomeView(TemplateView):
     template_name = 'home.html'
     extra_context = {'time': datetime.now()}
-   
-    
 
-
-# class AuthorizedView(TemplateView, LoginRequiredMixin):
-#     login_url = '/login/'
-#     template_name = 'authorized.html'
-
-
-
-# @login_required(login_url='/admin/')
-# def AuthorizedView(request):
-#     return render(request, 'authorized.html')
     
 

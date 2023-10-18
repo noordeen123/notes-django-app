@@ -32,6 +32,7 @@ class CreateNotesView(CreateView):
       return HttpResponseRedirect(self.get_success_url())
 
 class ListNotesView(LoginRequiredMixin, ListView):
+   login_url = '/login/'
    template_name = 'list.html'
    model = notes
    context_object_name = 'notes'
