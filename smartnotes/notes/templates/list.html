@@ -1,15 +1,17 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1 class="my-5" >Your Notes</h1>
+<div class="container">
+    <span class="h4 font-italic text-center text-secondary my-5">Welcome {{ request.user.username }}</span>
+</div>
+    <h2 class="my-5" >Your Notes </h2>
     <div class="row row-cols3 g-2">
         {% for note in notes %}
         <div class="col">
             <div class="p-3 border">
-                <h3>{{note.title}}</h3>
+                <h3 class="text-secondary">{{note.title}}</h3>
                 {{note.text|truncatechars:5}}
                 <a href="/smart/notes/{{note.id}}"  class="btn btn-outline-primary">Details</a>
-                
             </div>
         </div>
         {% endfor %}

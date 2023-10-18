@@ -42,9 +42,7 @@ class ListNotesView(LoginRequiredMixin, ListView):
       return self.request.user.notes_set.all()
  
 
-# def list(request):
-#    all_notes = notes.objects.all()
-#    return render(request, 'list.html',{'notes':all_notes})
+
 
 class DetailsNotesView(DetailView):
    template_name = 'details.html'
@@ -53,9 +51,4 @@ class DetailsNotesView(DetailView):
    
 
 
-# def details(request, id):
-#    try:
-#       note = notes.objects.get(pk=id)
-#    except notes.DoesNotExist:
-#       raise Http404('Note not found')
-#    return render(request, 'details.html', {'note':note})
+
