@@ -22,6 +22,12 @@ class RegisterView(CreateView):
     template_name = 'register.html'
     success_url = '/login/'
 
+    # def form_valid(self, form):
+    #     response = super().form_valid(form)
+    #     if self.request.user.is_authenticated:
+    #         return redirect('/login/')
+    #     return response
+
     def get(self, request, *args, **kwargs):
         if request.user.is_authenticated:
             return redirect('/smart/notes/')

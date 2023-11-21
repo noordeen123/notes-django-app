@@ -17,10 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+def trigger_error(request):
+    division_by_zero = 1 / 0
+
 
 urlpatterns = [
     path('admin/', admin.site.urls, name='admin'),
     path('', include("home.urls")),
     path('smart/', include("notes.urls")),
+    path('sentry-debug/', trigger_error),
     
 ]

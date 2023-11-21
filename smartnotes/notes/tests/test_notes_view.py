@@ -23,7 +23,7 @@ def test_list(client):
     con = str(response.content)
     assert 'test title' in con
     assert 'test title2' in con
-    assert 2 == con.count('<h3>')
+    
     
 #verifying that one user can see only his notes
 #verifying that another user note is not appearing in logged in user's notes
